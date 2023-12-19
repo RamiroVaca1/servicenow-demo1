@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ec18190047433110d7d67601e36d4355" label="User" max_length="40" name="x_1122852_transp_0_user" type="collection">
+        <element label="Date Welcome" mandatory="true" max_length="40" name="date_welcome" type="glide_date"/>
+        <element label="Email" mandatory="true" max_length="40" name="email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" mandatory="true" max_length="40" name="number" type="string" use_dynamic_default="true"/>
+        <element display="true" label="Person" mandatory="true" max_length="40" name="person" type="string"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="0" label="Travels Done" max_length="40" name="travels_done" type="string"/>
+        <element label="Type of Worker" mandatory="true" max_length="40" name="type_of_worker" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Manager" sequence="0" value="manager"/>
+                <element inactive_on_update="false" label="Administration" sequence="1" value="administration"/>
+                <element inactive_on_update="false" label="Driver" sequence="2" value="driver"/>
+                <element inactive_on_update="false" label="Volunteer" sequence="3" value="volunteer"/>
+                <element inactive_on_update="false" label="Owner" sequence="4" value="owner"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

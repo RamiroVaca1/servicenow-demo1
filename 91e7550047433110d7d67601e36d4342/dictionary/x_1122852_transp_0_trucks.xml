@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="7ab720d647433110d7d67601e36d43a7" label="Trucks" max_length="40" name="x_1122852_transp_0_trucks" type="collection">
+        <element default="0" label="Earnings" max_length="40" name="earnings" type="integer"/>
+        <element label="Last maintenance" max_length="40" name="last_maintenance" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element display="true" label="Patent" mandatory="true" max_length="8" name="patent" type="string"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Travels" mandatory="true" max_length="40" name="travels" type="integer"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

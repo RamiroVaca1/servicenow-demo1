@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="earnings" label="Earnings" language="en" table="x_1122852_transp_0_trucks">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>earnings</element>
+            <help/>
+            <hint/>
+            <label>Earnings</label>
+            <language>en</language>
+            <name>x_1122852_transp_0_trucks</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-12-13 16:50:24</sys_created_on>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_name>Earnings</sys_name>
+            <sys_package display_value="Transporte Vaca" source="x_1122852_transp_0">91e7550047433110d7d67601e36d4342</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Transporte Vaca">91e7550047433110d7d67601e36d4342</sys_scope>
+            <sys_update_name>sys_documentation_x_1122852_transp_0_trucks_earnings_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-12-13 16:53:56</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
