@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1122852_transp_0.CountPatents</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Count patents and give a total count of certaing plate</description>
+        <name>CountPatents</name>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    if (current.truck_used) {
+
+        var truckRecord = new GlideRecord('x_1122852_transp_0_trucks');
+        truckRecord.addQuery('patent', current.truck_used);
+        truckRecord.query();
+
+        if (truckRecord.next()) {
+            truckRecord.travels = (truckRecord.travels || 0) + 1;
+            truckRecord.update();
+            current.truck_reference = truckRecord.sys_id;
+            current.travels = truckRecord.travels;
+            
+            gs.info('Truck record updated with ID: ' + truckRecord.sys_id);
+        } else {
+            gs.info('Truck record not found for patent: ' + current.truck_used);
+        }
+    }
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-12-13 18:29:20</sys_created_on>
+        <sys_id>05f2e51e47073110d7d67601e36d43dd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CountPatents</sys_name>
+        <sys_package display_value="Transporte Vaca" source="x_1122852_transp_0">91e7550047433110d7d67601e36d4342</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Transporte Vaca">91e7550047433110d7d67601e36d4342</sys_scope>
+        <sys_update_name>sys_script_include_05f2e51e47073110d7d67601e36d43dd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-21 12:18:54</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Transporte Vaca">91e7550047433110d7d67601e36d4342</application>
+        <file_path/>
+        <instance_id>a853ac43dbf524500b9d21c405961936</instance_id>
+        <instance_name>dev105609</instance_name>
+        <name>sys_script_include_05f2e51e47073110d7d67601e36d43dd</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1122852_transp_0.CountPatents&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Count patents and give a total count of certaing plate&lt;/description&gt;&lt;name&gt;CountPatents&lt;/name&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    if (current.truck_used) {
+
+        var truckRecord = new GlideRecord('x_1122852_transp_0_trucks');
+        truckRecord.addQuery('patent', current.truck_used);
+        truckRecord.query();
+
+        if (truckRecord.next()) {
+            truckRecord.travels = (truckRecord.travels || 0) + 1;
+            truckRecord.update();
+            current.truck_reference = truckRecord.sys_id;
+            current.travels = truckRecord.travels;
+            
+            gs.info('Truck record updated with ID: ' + truckRecord.sys_id);
+        } else {
+            gs.info('Truck record not found for patent: ' + current.truck_used);
+        }
+    }
+})(current, previous);
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-12-13 18:29:20&lt;/sys_created_on&gt;&lt;sys_id&gt;05f2e51e47073110d7d67601e36d43dd&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;CountPatents&lt;/sys_name&gt;&lt;sys_package display_value="Transporte Vaca" source="x_1122852_transp_0"&gt;91e7550047433110d7d67601e36d4342&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Transporte Vaca"&gt;91e7550047433110d7d67601e36d4342&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_05f2e51e47073110d7d67601e36d43dd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-12-21 12:18:54&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1761386346</payload_hash>
+        <record_name>CountPatents</record_name>
+        <reverted_from/>
+        <source>3722ec4447d77110d7d67601e36d43f7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-12-21 12:18:54</sys_created_on>
+        <sys_id>1d3c553447573510d7d67601e36d43c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18c8c507bea0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-21 12:18:54</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>553c55344557351016cb90ce488a1bc9</update_guid>
+        <update_guid_history>553c55344557351016cb90ce488a1bc9:1761386346,43c2ffcca793b11082a57028f03effe4:1731843585,7944219ec30731100a7f9a9b59352e57:885701833</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-12-21 12:20:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>aa2e111c4ef94154839ba67b7871c510</sys_id>
+        <sys_metadata>05f2e51e47073110d7d67601e36d43dd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CountPatents</sys_name>
+        <sys_package display_value="Transporte Vaca" source="x_1122852_transp_0">91e7550047433110d7d67601e36d4342</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Transporte Vaca">91e7550047433110d7d67601e36d4342</sys_scope>
+        <sys_scope_delete display_value="">e13bcf8aeda5457f951360d3b3cb4221</sys_scope_delete>
+        <sys_update_name>sys_script_include_05f2e51e47073110d7d67601e36d43dd</sys_update_name>
+        <sys_update_version display_value="sys_script_include_05f2e51e47073110d7d67601e36d43dd">1d3c553447573510d7d67601e36d43c9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-21 12:20:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

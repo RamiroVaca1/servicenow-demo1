@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1122852_transp_0_trucks</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>CountPlates</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    if (current.truck_used) {
+
+        var truckRecord = new GlideRecord('x_1122852_transp_0_trucks');
+        truckRecord.addQuery('patent', current.truck_used);
+        truckRecord.query();
+
+        if (truckRecord.next()) {
+            truckRecord.travels = (truckRecord.travels || 0) + 1;
+            truckRecord.update();
+            current.truck_reference = truckRecord.sys_id;
+            current.travels = truckRecord.travels;
+            
+            gs.info('Truck record updated with ID: ' + truckRecord.sys_id);
+        } else {
+            gs.info('Truck record not found for patent: ' + current.truck_used);
+        }
+    }
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-12-21 12:20:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>228cd93447573510d7d67601e36d436c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CountPlates</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Transporte Vaca" source="x_1122852_transp_0">91e7550047433110d7d67601e36d4342</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Transporte Vaca">91e7550047433110d7d67601e36d4342</sys_scope>
+        <sys_update_name>sys_script_228cd93447573510d7d67601e36d436c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-21 12:20:39</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=228cd93447573510d7d67601e36d436c"/>
+</record_update>
